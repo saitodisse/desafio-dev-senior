@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Address Finder</h1>
+
+<hr />
+<h3>GET api/address/</h3>
+<hr />
+
+<h4>params:</h4>
+<ul>
+    <li>string street</li>
+    <li>string houseNumber</li>
+    <li>string cityName</li>
+    <li>string state</li>
+</ul>
+
+<h4>result:</h4>
+Array of
+<ul>
+    <li>addressLocation.key</li>
+    <li>address.street</li>
+    <li>address.houseNumber</li>
+    <li>address.zip</li>
+    <li>address.district</li>
+    <li>address.city.name</li>
+    <li>address.city.state</li>
+    <li>zipL</li>
+    <li>zipR</li>
+    <li>carAccess</li>
+    <li>dataSource</li>
+    <li>point.y</li>
+    <li>point.x</li>
+</ul>

@@ -11,6 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3713AA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleToTestMapLinkAPICall", "ConsoleToTestMapLinkAPICall\ConsoleToTestMapLinkAPICall.csproj", "{092FC9D9-2DE8-4D88-A871-D477267FA26C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sandbox", "Sandbox", "{D093BCF9-7C76-4F81-A553-530B45227FC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI_ML.Tests", "WebAPI_ML.Tests\WebAPI_ML.Tests.csproj", "{9253CBBC-AAF2-4021-A961-91D68C490997}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI_ML", "WebAPI_ML\WebAPI_ML.csproj", "{21369BBA-9707-4BCF-9AD5-931AA9985D98}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B348187A-4EEF-4BC1-B473-95506BC7F8A2}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{36221597-26ED-4E55-8A78-58E3ED8BED06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +34,23 @@ Global
 		{092FC9D9-2DE8-4D88-A871-D477267FA26C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{092FC9D9-2DE8-4D88-A871-D477267FA26C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{092FC9D9-2DE8-4D88-A871-D477267FA26C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9253CBBC-AAF2-4021-A961-91D68C490997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9253CBBC-AAF2-4021-A961-91D68C490997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9253CBBC-AAF2-4021-A961-91D68C490997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9253CBBC-AAF2-4021-A961-91D68C490997}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21369BBA-9707-4BCF-9AD5-931AA9985D98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21369BBA-9707-4BCF-9AD5-931AA9985D98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21369BBA-9707-4BCF-9AD5-931AA9985D98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21369BBA-9707-4BCF-9AD5-931AA9985D98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36221597-26ED-4E55-8A78-58E3ED8BED06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36221597-26ED-4E55-8A78-58E3ED8BED06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36221597-26ED-4E55-8A78-58E3ED8BED06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36221597-26ED-4E55-8A78-58E3ED8BED06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{092FC9D9-2DE8-4D88-A871-D477267FA26C} = {D093BCF9-7C76-4F81-A553-530B45227FC7}
 	EndGlobalSection
 EndGlobal

@@ -1,5 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://webservices.maplink2.com.br" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://webservices.maplink2.com.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://webservices.maplink2.com.br"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  targetNamespace="http://webservices.maplink2.com.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://webservices.maplink2.com.br">
       <s:element name="getRouteTotals">
@@ -140,7 +147,8 @@
       <s:element name="getRouteWithAlternativesResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="getRouteWithAlternativesResult" type="tns:AlternativeRouteInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="getRouteWithAlternativesResult"
+                       type="tns:AlternativeRouteInfo" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -344,7 +352,8 @@
       <s:element name="getRouteDescriptionResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="getRouteDescriptionResult" type="tns:ArrayOfSegmentDescription" />
+            <s:element minOccurs="0" maxOccurs="1" name="getRouteDescriptionResult"
+                       type="tns:ArrayOfSegmentDescription" />
           </s:sequence>
         </s:complexType>
       </s:element>
