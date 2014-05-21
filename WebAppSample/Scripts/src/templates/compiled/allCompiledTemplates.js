@@ -6,7 +6,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"row\">\r\n    <div class=\"form-group col-xs-3\">\r\n        <label for=\"street\">Street name:</label>\r\n        <input class=\"form-control\" id=\"street\" placeholder=\"Rua Augusta\" value=\"Augusta\">\r\n    </div>\r\n    <div class=\"form-group col-xs-1\">\r\n        <label for=\"houseNumber\">Number:</label>\r\n        <input class=\"form-control\" id=\"houseNumber\" placeholder=\"1000\" value=\"1000\">\r\n    </div>\r\n    <div class=\"form-group col-xs-1\">\r\n        <label for=\"state\">State:</label>\r\n        <input class=\"form-control\" id=\"state\" placeholder=\"SP\" value=\"SP\">\r\n    </div>\r\n    <div class=\"form-group col-xs-2\">\r\n        <label for=\"cityName\">City:</label>\r\n        <input class=\"form-control\" id=\"cityName\" placeholder=\"São Paulo\" value=\"São Paulo\">\r\n    </div>\r\n    <div class=\"form-group col-xs-1\">\r\n        <label for=\"city\">&nbsp;</label>\r\n        <button id=\"btnSearchAddress\" class=\"btn btn-default\">Search</button>\r\n    </div>\r\n</div>\r\n";
+  return "<div class=\"row\">\r\n    <div class=\"form-group col-xs-3\">\r\n        <label for=\"street\">Street name:</label>\r\n        <input class=\"form-control\" id=\"street\" placeholder=\"Rua Augusta\" value=\"Augusta\">\r\n    </div>\r\n    <div class=\"form-group col-xs-1\">\r\n        <label for=\"houseNumber\">Number:</label>\r\n        <input class=\"form-control\" id=\"houseNumber\" placeholder=\"1000\" value=\"1000\">\r\n    </div>\r\n    <div class=\"form-group col-xs-1\">\r\n        <label for=\"state\">State:</label>\r\n        <input class=\"form-control\" id=\"state\" placeholder=\"SP\" value=\"SP\">\r\n    </div>\r\n    <div class=\"form-group col-xs-2\">\r\n        <label for=\"cityName\">City:</label>\r\n        <input class=\"form-control\" id=\"cityName\" placeholder=\"São Paulo\" value=\"São Paulo\">\r\n    </div>\r\n    <div class=\"form-group col-xs-1\">\r\n        <label for=\"city\">&nbsp;</label>\r\n        <button id=\"btnSearchAddress\" class=\"btn btn-primary\">Search</button>\r\n    </div>\r\n</div>\r\n";
   });
 
 this["JST"]["./WebAppSample/Scripts/src/templates/inputVehicleInfoItemView.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -16,6 +16,22 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
 
   return "<div class=\"row\">\r\n    <div class=\"form-group col-xs-3\">\r\n        <label for=\"gasPrice\">Gas price:</label>\r\n        <input class=\"form-control\" id=\"gasPrice\" placeholder=\"1.92\" value=\"1.92\">\r\n    </div>\r\n    <div class=\"form-group col-xs-3\">\r\n        <label for=\"carFuelConsumption\">Car Fuel Consumption per km:</label>\r\n        <input class=\"form-control\" id=\"carFuelConsumption\" placeholder=\"10\" value=\"10\">\r\n    </div>\r\n\r\n    <div class=\"form-group col-xs-1\">\r\n        <label>&nbsp;</label>\r\n        <button id=\"btnCalcRoute\" class=\"btn btn-success\">Get Route</button>\r\n    </div>\r\n</div>\r\n";
+  });
+
+this["JST"]["./WebAppSample/Scripts/src/templates/routeResultItemView.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, helper, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "<h3>Km total</h3>\r\n<p>"
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.routeTotals)),stack1 == null || stack1 === false ? stack1 : stack1.totalDistance)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</p>\r\n<h3>Cost total</h3>\r\n<p>";
+  if (helper = helpers.totalFuelCost) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.totalFuelCost); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "</p>\r\n";
+  return buffer;
   });
 
 this["JST"]["./WebAppSample/Scripts/src/templates/searchAddressResultCompositeView.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {

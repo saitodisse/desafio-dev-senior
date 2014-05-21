@@ -128,8 +128,10 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\src\app\controller.js" />
+    <Content Include="Scripts\src\app\models\routeResultModel.js" />
     <Content Include="Scripts\src\app\models\vehicleInfoModel.js" />
     <Content Include="Scripts\src\app\repositories\maplink-api.js" />
+    <Content Include="Scripts\src\app\views\routeResultItemView.js" />
     <Content Include="Scripts\src\app\views\inputVehicleInfoItemView.js" />
     <Content Include="Scripts\src\app\views\selectedAddressesCompositeView.js" />
     <Content Include="Scripts\src\app\views\searchAddressResultCompositeView.js" />
@@ -152,6 +154,7 @@
     <Content Include="Scripts\src\templates\selectedAddressesCompositeView.hbs" />
     <Content Include="Scripts\src\templates\selectedAddressesItemView.hbs" />
     <Content Include="Scripts\src\templates\inputVehicleInfoItemView.hbs" />
+    <Content Include="Scripts\src\templates\routeResultItemView.hbs" />
     <None Include="Scripts\vendor\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\vendor\handlebars.amd.js" />
     <Content Include="Scripts\vendor\handlebars.amd.min.js" />

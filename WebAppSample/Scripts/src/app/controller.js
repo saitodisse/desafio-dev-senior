@@ -19,7 +19,8 @@ MapApp.module('Mapp', function (Mapp, App, Backbone, Marionette, $, _) {
             var addressModel = new App.Models.AddressModel();
             var addressResultCollection = new App.Models.AddressCollection();
             var addressSelectedCollection = new App.Models.AddressCollection();
-            var vehicleInfoModel = new App.Models.VehicleInfoModel();
+            this.vehicleInfoModel = new App.Models.VehicleInfoModel();
+            
 
             //VIEWS
             var inputAddressView = new App.Views.InputAddressView({
@@ -32,7 +33,7 @@ MapApp.module('Mapp', function (Mapp, App, Backbone, Marionette, $, _) {
                 collection: addressSelectedCollection
             });
             var inputVehicleInfoItemView = new App.Views.InputVehicleInfoItemView({
-                model: vehicleInfoModel,
+                model: this.vehicleInfoModel,
                 addressesCollection: addressSelectedCollection
             });
 
@@ -47,39 +48,34 @@ MapApp.module('Mapp', function (Mapp, App, Backbone, Marionette, $, _) {
             var inputAddressSection = $('#inputAddress');
             var addressSearchResultSection = $('#addressSearchResult');
             var inputVehicleInfoSection = $('#inputVehicleInfo');
-            var routeResultSection = $('#routeResult');
 
             //Add to DOM
             inputAddressSection.html(inputAddressView.el);
             addressSearchResultSection.html(searchAddressResultCompositeView.el);
             addressListSection.html(selectedAddressesCompositeView.el);
             inputVehicleInfoSection.html(inputVehicleInfoItemView.el);
+
+
+            //Final event
+            App.vent.on('calc:route:result', this.renderRouteResult, this);
+
+        },
+
+        renderRouteResult: function(result) {
+            console.log('renderRouteResult');
+
+            var routeResultSection = $('#routeResult');
+
+            var routeResultModel = new App.Models.RouteResultModel(result);
+
+            var routeResultItemView = new App.Views.RouteResultItemView({
+                model: routeResultModel,
+                vehicleInfoModel: this.vehicleInfoModel
+            });
+            routeResultItemView.render();
+
+            routeResultSection.html(routeResultItemView.el);
         }
-
-        //showHeader: function (Mapp) {
-        //    var header = new App.Layout.Header({
-        //        collection: Mapp
-        //    });
-        //    App.header.show(header);
-        //},
-
-        //showFooter: function (Mapp) {
-        //    var footer = new App.Layout.Footer({
-        //        collection: Mapp
-        //    });
-        //    App.footer.show(footer);
-        //},
-
-        //showMapp: function (Mapp) {
-        //    App.main.show(new Mapp.Views.ListView({
-        //        collection: Mapp
-        //    }));
-        //},
-
-        //// Set the filter to show complete or all items
-        //filterItems: function (filter) {
-        //    App.vent.trigger('Mapp:filter', (filter && filter.trim()) || '');
-        //}
     });
 
     // Mapp Initializer

@@ -75,8 +75,8 @@ MapApp.module('MapLinkAPI', function(MapLinkAPI, App, Backbone, Marionette, $) {
             });
 
             req.success(function (data) {
-                console.log('result:', JSON.stringify(data));
-                //App.vent.trigger('calc:route:result', data);
+                console.log('result:', data);
+                App.vent.trigger('calc:route:result', data);
 
 /*  sample response  *
     ***************
