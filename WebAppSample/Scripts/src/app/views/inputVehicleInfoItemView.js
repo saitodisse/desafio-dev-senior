@@ -7,10 +7,10 @@ MapApp.module('Views', function (Views, App, Backbone, Marionette, $) {
     //
     // Display an individual todo item, and respond to changes
     // that are made to the item, including marking completed.
-    Views.InputAddressView = Marionette.ItemView.extend({
+    Views.InputVehicleInfoItemView = Marionette.ItemView.extend({
         tagName: 'div',
 
-        template: JST['./WebAppSample/Scripts/src/templates/inputAddress.hbs'],
+        template: JST['./WebAppSample/Scripts/src/templates/inputVehicleInfoItemView.hbs'],
 
         ui: {
             street: '#street',

@@ -1,12 +1,9 @@
 ﻿/*global MapApp */
 'use strict';
 
-
 MapApp.module('Mapp', function (Mapp, App, Backbone, Marionette, $, _) {
 
-    Mapp.Controller = function () {
-        this.Mapp = new App.Models.AddressCollection();
-    };
+    Mapp.Controller = function (){};
 
     _.extend(Mapp.Controller.prototype, {
 
@@ -19,20 +16,30 @@ MapApp.module('Mapp', function (Mapp, App, Backbone, Marionette, $, _) {
             var webAPI = new App.MapLinkAPI.WebAPI();
 
             //MODELS
-            var addressCollection = new App.Models.AddressCollection();
             var addressModel = new App.Models.AddressModel();
+            var addressResultCollection = new App.Models.AddressCollection();
+            var addressSelectedCollection = new App.Models.AddressCollection();
+            var vehicleInfoModel = new App.Models.VehicleInfoModel();
 
             //VIEWS
             var inputAddressView = new App.Views.InputAddressView({
                 model: addressModel
             });
             var searchAddressResultCompositeView = new App.Views.SearchAddressResultCompositeView({
-                collection: addressCollection
+                collection: addressResultCollection
+            });
+            var selectedAddressesCompositeView = new App.Views.SelectedAddressesCompositeView({
+                collection: addressSelectedCollection
+            });
+            var inputVehicleInfoItemView = new App.Views.InputVehicleInfoItemView({
+                model: vehicleInfoModel
             });
 
             //render views
             inputAddressView.render();
             searchAddressResultCompositeView.render();
+            selectedAddressesCompositeView.render();
+            inputVehicleInfoItemView.render();
 
             //get DOM sections
             var addressListSection = $('#addressList');
@@ -44,6 +51,8 @@ MapApp.module('Mapp', function (Mapp, App, Backbone, Marionette, $, _) {
             //Add to DOM
             inputAddressSection.html(inputAddressView.el);
             addressSearchResultSection.html(searchAddressResultCompositeView.el);
+            addressListSection.html(selectedAddressesCompositeView.el);
+            inputVehicleInfoSection.html(inputVehicleInfoItemView.el);
         }
 
         //showHeader: function (Mapp) {
