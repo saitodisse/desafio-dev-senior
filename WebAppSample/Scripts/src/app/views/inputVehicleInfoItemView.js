@@ -45,9 +45,7 @@ MapApp.module('Views', function (Views, App, Backbone, Marionette, $) {
                 });
             });
 
-            App.vent.trigger('calc:route', {
-                addresses: addressesDto
-            });
+            App.vent.trigger('calc:route', addressesDto);
         },
     });
 });

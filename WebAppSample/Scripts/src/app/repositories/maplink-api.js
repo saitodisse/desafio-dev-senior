@@ -63,15 +63,15 @@ MapApp.module('MapLinkAPI', function(MapLinkAPI, App, Backbone, Marionette, $) {
 
 
 
-        calcRoute: function (searchObj) {
-            console.log('sending: ', JSON.stringify(searchObj));
+        calcRoute: function (addresses) {
+            console.log('sending: ', JSON.stringify(addresses));
 
             var req = $.ajax({
                 url: 'http://localhost:9002/api/route',
                 dataType: 'json',
                 type: 'POST',
                 contentType: 'application/json; charset=utf-8',
-                data: JSON.stringify(searchObj)
+                data: JSON.stringify(addresses)
             });
 
             req.success(function (data) {
