@@ -1,10 +1,10 @@
 ﻿/*global MapApp */
 'use strict';
 
-MapApp.module('Mapp', function (Mapp, App, Backbone) {
+MapApp.module('Models', function (Models, App, Backbone) {
     // Todo Model
     // ----------
-    Mapp.Todo = Backbone.Model.extend({
+    Models.AddressModel = Backbone.Model.extend({
         defaults: {
             title: '',
             completed: false,

@@ -1,0 +1,23 @@
+{
+  "name": "desafio-dev-senior",
+  "version": "0.0.0",
+  "description": "Desafio Desenvolvedor Sênior ======================================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/saitodisse/desafio-dev-senior.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saitodisse/desafio-dev-senior/issues"
+  },
+  "homepage": "https://github.com/saitodisse/desafio-dev-senior",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-handlebars": "~0.8.0"
+  }
+}

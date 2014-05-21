@@ -5,7 +5,9 @@ Desafio Desenvolvedor Sênior
 Este projeto utiliza templates handlebars pré-compilados. 
 Para tanto é necessário instalar o node.js (http://nodejs.org/download/).
 ```
+npm install grunt-cli -g
 npm install handlebars -g
+npm install grunt-contrib-handlebars --save-dev
 ```
 
 ======================================

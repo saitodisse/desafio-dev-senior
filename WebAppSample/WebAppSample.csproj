@@ -135,6 +135,7 @@
     <Content Include="Scripts\src\app\models\routeModel.js" />
     <Content Include="Scripts\src\app\models\addressModel.js" />
     <Content Include="Scripts\src\app\views\inputAddressView.js" />
+    <Content Include="Scripts\src\templates\compiled\allCompiledTemplates.js" />
     <Content Include="Scripts\vendor\backbone.js" />
     <Content Include="Scripts\vendor\backbone.marionette.js" />
     <Content Include="Scripts\vendor\backbone.marionette.min.js" />
@@ -144,7 +145,7 @@
     <Content Include="Scripts\vendor\backbone.min.map" />
     <Content Include="App_Readme\Handlebarsjs_README.md" />
     <Content Include="App_Readme\Handlebarsjs_LICENSE" />
-    <Content Include="Scripts\src\app\templates\inputAddress.hbs" />
+    <Content Include="Scripts\src\templates\inputAddress.hbs" />
     <None Include="Scripts\vendor\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\vendor\handlebars.amd.js" />
     <Content Include="Scripts\vendor\handlebars.amd.min.js" />
@@ -230,7 +231,7 @@
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
   <PropertyGroup>
-    <PreBuildEvent>handlebars $(ProjectDir)\Scripts\src\app\templates\inputAddress.hbs -f $(ProjectDir)\Scripts\src\app\templates\compiled\inputAddress.js</PreBuildEvent>
+    <PreBuildEvent>grunt</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
