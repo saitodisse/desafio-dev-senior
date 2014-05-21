@@ -1,15 +1,34 @@
 Desafio Desenvolvedor Sênior
 ======================================
 
-###Intruções para instalação
+  - Asp.Net MVC Web.API
+  - Microsoft.VisualStudio.QualityTools.UnitTestFramework
+  - Backbone.js
+  - Backbone.Marionette.js
+  - Handlebars
+  - Grunt
+  - Maplink web services
+
+##Intruções para instalação
 Este projeto utiliza templates handlebars pré-compilados. 
 Para tanto é necessário instalar o node.js (http://nodejs.org/download/).
+
 ```
 npm install grunt-cli -g
-npm install handlebars -g
-npm install grunt-contrib-handlebars --save-dev
 ```
 
+Isto é necessário porque os templates estão sendo pré-compilados em handlebars com o grunt em um evento 
+de "pre-build" do projeto WebAppSample
+
+```
+...
+<PreBuildEvent>grunt</PreBuildEvent>
+...
+```
+
+
+
+Texto original:
 ======================================
 
 Esta página contém detalhes do exercício utilizado como requisito para a oportunidade em aberto para atuar como desenvolvedor de software sênior pela empresa MapLink.

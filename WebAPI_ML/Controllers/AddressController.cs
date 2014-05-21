@@ -6,10 +6,18 @@ using WebAPI_ML.AddressFinderServiceReference;
 
 namespace WebAPI_ML.Controllers
 {
+    public class SearchAddressInput
+    {
+        public string street;
+        public string houseNumber;
+        public string state;
+        public string cityName;
+    }
+
     public class AddressController : ApiController
     {
-        // GET api/address/
-        public List<AddressLocation> Get(string street, string houseNumber, string cityName, string state)
+        // POST api/address/
+        public List<AddressLocation> Get(string street, string houseNumber, string state, string cityName)
         {
             const string token = "c13iyCvmcC9mzwkLd0LCbmYC5mUF5m2jNGNtNGt6NmK6NJK=";
 

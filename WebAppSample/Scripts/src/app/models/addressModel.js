@@ -2,14 +2,15 @@
 'use strict';
 
 MapApp.module('Models', function (Models, App, Backbone) {
-    // Todo Model
-    // ----------
+
+    // ---------------
+    // Address Model
+    // ---------------
     Models.AddressModel = Backbone.Model.extend({
         defaults: {
-            title: '',
-            completed: false,
-            created: 0
         },
+
+        idAttribute: "point",
 
         initialize: function () {
             if (this.isNew()) {
@@ -25,5 +26,13 @@ MapApp.module('Models', function (Models, App, Backbone) {
             return this.get('completed');
         }
     });
+
+    // ---------------
+    // Address Collection
+    // ---------------
+    Models.AddressCollection = Backbone.Collection.extend({
+        model: Models.AddressModel,
+    });
+
 
 });

@@ -3,32 +3,47 @@
 
 
 MapApp.module('Mapp', function (Mapp, App, Backbone, Marionette, $, _) {
-    console.dir(arguments);
-    // Mapp Controller (Mediator)
-    // ------------------------------
-    //
-    // Control the workflow and logic that exists at the application
-    // level, above the implementation detail of views and models
+
     Mapp.Controller = function () {
         this.Mapp = new App.Models.AddressCollection();
     };
 
     _.extend(Mapp.Controller.prototype, {
-        // Start the app by showing the appropriate views
-        // and fetching the list of todo items, if there are any
+
+        // //////////////////////////////////////////////
+        // /WebAppSample/Views/Home/AddressFinder.cshtml
+        // //////////////////////////////////////////////
+
         start: function () {
-            //MODEL
+            //MaplinkApp API
+            var webAPI = new App.MapLinkAPI.WebAPI();
+
+            //MODELS
+            var addressCollection = new App.Models.AddressCollection();
             var addressModel = new App.Models.AddressModel();
 
-            //VIEW
+            //VIEWS
             var inputAddressView = new App.Views.InputAddressView({
                 model: addressModel
             });
+            var searchAddressResultCompositeView = new App.Views.SearchAddressResultCompositeView({
+                collection: addressCollection
+            });
+
+            //render views
             inputAddressView.render();
+            searchAddressResultCompositeView.render();
+
+            //get DOM sections
+            var addressListSection = $('#addressList');
+            var inputAddressSection = $('#inputAddress');
+            var addressSearchResultSection = $('#addressSearchResult');
+            var inputVehicleInfoSection = $('#inputVehicleInfo');
+            var routeResultSection = $('#routeResult');
 
             //Add to DOM
-            var inputAddressSection = $('#inputAddress');
             inputAddressSection.html(inputAddressView.el);
+            addressSearchResultSection.html(searchAddressResultCompositeView.el);
         }
 
         //showHeader: function (Mapp) {

@@ -128,11 +128,10 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\src\app\controller.js" />
-    <Content Include="Scripts\src\app\collections\routeCollection.js" />
-    <Content Include="Scripts\src\app\collections\addressCollection.js" />
+    <Content Include="Scripts\src\app\repositories\maplink-api.js" />
+    <Content Include="Scripts\src\app\views\searchAddressResultItemView.js" />
+    <Content Include="Scripts\src\app\views\searchAddressResultCompositeView.js" />
     <Content Include="Scripts\src\main.js" />
-    <Content Include="Scripts\src\app\models\routeResultModel.js" />
-    <Content Include="Scripts\src\app\models\routeModel.js" />
     <Content Include="Scripts\src\app\models\addressModel.js" />
     <Content Include="Scripts\src\app\views\inputAddressView.js" />
     <Content Include="Scripts\src\templates\compiled\allCompiledTemplates.js" />
@@ -146,6 +145,8 @@
     <Content Include="App_Readme\Handlebarsjs_README.md" />
     <Content Include="App_Readme\Handlebarsjs_LICENSE" />
     <Content Include="Scripts\src\templates\inputAddress.hbs" />
+    <Content Include="Scripts\src\templates\searchAddressResultCompositeView.hbs" />
+    <Content Include="Scripts\src\templates\searchAddressResultItemView.hbs" />
     <None Include="Scripts\vendor\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\vendor\handlebars.amd.js" />
     <Content Include="Scripts\vendor\handlebars.amd.min.js" />

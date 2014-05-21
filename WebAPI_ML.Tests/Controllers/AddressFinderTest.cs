@@ -11,8 +11,8 @@ namespace WebAPI_ML.Tests.Controllers
         public void SearchForAddress()
         {
             var controller = new AddressController();
-            var addressLocations = controller.Get("Augusta", "1000", "São Paulo", "SP");
-            Assert.IsTrue(addressLocations.Count > 1);
+            var addressLocations = controller.Get("Augusta", "1000", "SP", "São Paulo");
+            Assert.AreEqual(5, addressLocations.Count);
         }
     }
 }
