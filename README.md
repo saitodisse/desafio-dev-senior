@@ -1,6 +1,15 @@
 Desafio Desenvolvedor Sênior
 ======================================
 
+###Intruções para instalação
+Este projeto utiliza templates handlebars pré-compilados. 
+Para tanto é necessário instalar o node.js (http://nodejs.org/download/).
+```
+npm install handlebars -g
+```
+
+======================================
+
 Esta página contém detalhes do exercício utilizado como requisito para a oportunidade em aberto para atuar como desenvolvedor de software sênior pela empresa MapLink.
 
 Uma equipe solicitou a criação de um componente para a realização de cálculos de valores totais da rota.
@@ -41,7 +50,7 @@ Você encontrará <b>detalhes de uso</b> nestes endereços:
 * <a href="http://dev.maplink.com.br/webservices/addressfinder/" target="_blank">Geocodificação - dev.maplink.com.br/webservices/addressfinder</a>
 * <a href="http://dev.maplink.com.br/webservices/rotas/" target="_blank">Roteirização - dev.maplink.com.br/webservices/rotas</a>
 
-Para consumir os métodos dos serviços SOAP da MapLink é necessário utilizar uma chave de acesso. Você deve utilizar a seguinte: <b>c13iyCvmcC9mzwkLd0LCbmYC5mUF5m2jNGNtNGt6NmK6NJK=</b>
+Para consumir os méMapp dos serviços SOAP da MapLink é necessário utilizar uma chave de acesso. Você deve utilizar a seguinte: <b>c13iyCvmcC9mzwkLd0LCbmYC5mUF5m2jNGNtNGt6NmK6NJK=</b>
 
 Caso você opte por trabalhar com a API Javascript, use esta chave: <b>ymYmaxLXdMBJRmLgendrG0RjGYOIbvLXOwBvSJvgNMpPSAFAGKdAOKFgTmzPTKs9</b>
 

@@ -19,10 +19,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI_ML", "WebAPI_ML\WebA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B348187A-4EEF-4BC1-B473-95506BC7F8A2}"
 	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{36221597-26ED-4E55-8A78-58E3ED8BED06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppSample", "WebAppSample\WebAppSample.csproj", "{B2B01F58-C670-4960-BCF3-C59D20A2C6ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,10 +44,10 @@ Global
 		{21369BBA-9707-4BCF-9AD5-931AA9985D98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21369BBA-9707-4BCF-9AD5-931AA9985D98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21369BBA-9707-4BCF-9AD5-931AA9985D98}.Release|Any CPU.Build.0 = Release|Any CPU
-		{36221597-26ED-4E55-8A78-58E3ED8BED06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{36221597-26ED-4E55-8A78-58E3ED8BED06}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{36221597-26ED-4E55-8A78-58E3ED8BED06}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{36221597-26ED-4E55-8A78-58E3ED8BED06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2B01F58-C670-4960-BCF3-C59D20A2C6ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B01F58-C670-4960-BCF3-C59D20A2C6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B01F58-C670-4960-BCF3-C59D20A2C6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B01F58-C670-4960-BCF3-C59D20A2C6ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
