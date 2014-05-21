@@ -32,7 +32,8 @@ MapApp.module('Mapp', function (Mapp, App, Backbone, Marionette, $, _) {
                 collection: addressSelectedCollection
             });
             var inputVehicleInfoItemView = new App.Views.InputVehicleInfoItemView({
-                model: vehicleInfoModel
+                model: vehicleInfoModel,
+                addressesCollection: addressSelectedCollection
             });
 
             //render views

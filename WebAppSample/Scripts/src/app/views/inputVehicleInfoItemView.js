@@ -20,18 +20,25 @@ MapApp.module('Views', function (Views, App, Backbone, Marionette, $) {
         },
 
         events: {
-            'click #btnSearchAddress': 'searchAddress',
+            'click #btnCalcRoute': 'btnCalcRouteClicked',
         },
 
-        searchAddress: function() {
-            var searchObj = {
-                street: this.ui.street.val(),
-                houseNumber: this.ui.houseNumber.val(),
-                state: this.ui.state.val(),
-                cityName: this.ui.cityName.val()
-            }
+        initialize: function (options) {
+            this.addressesCollection = options.addressesCollection;
+        },
 
-            App.vent.trigger('search:address', searchObj);
+        btnCalcRouteClicked: function () {
+            console.log('selected address collection', this.addressesCollection);
+            //var searchObj = {
+            //    street: this.ui.street.val(),
+            //    houseNumber: this.ui.houseNumber.val(),
+            //    state: this.ui.state.val(),
+            //    cityName: this.ui.cityName.val()
+            //}
+
+            App.vent.trigger('calc:route', {
+                addresses: this.addressesCollection.toJSON()
+            });
         },
     });
 });
