@@ -36,8 +36,17 @@ MapApp.module('Views', function (Views, App, Backbone, Marionette, $) {
             //    cityName: this.ui.cityName.val()
             //}
 
+            var addressesDto = [];
+            this.addressesCollection.models.forEach(function(model) {
+                addressesDto.push({
+                    street: model.get('address').street,
+                    X: model.get('point').x,
+                    Y: model.get('point').y,
+                });
+            });
+
             App.vent.trigger('calc:route', {
-                addresses: this.addressesCollection.toJSON()
+                addresses: addressesDto
             });
         },
     });

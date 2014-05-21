@@ -1,31 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Helpers;
 using System.Web.Http;
+using Newtonsoft.Json;
 using WebAPI_ML.RouteServiceReference;
 
 namespace WebAPI_ML.Controllers
 {
+    public class AddressItem
+    {
+        public string street { get; set; }
+        public double X { get; set; }
+        public double Y { get; set; }
+    }
+    
     public class RouteController : ApiController
     {
-        public RouteInfo Get(string[] lista)
+        public RouteInfo Post(IList<AddressItem> addresses)
         {
             const string token = "c13iyCvmcC9mzwkLd0LCbmYC5mUF5m2jNGNtNGt6NmK6NJK=";
 
-            var originRoute = new RouteStop
+            var routes = new List<RouteStop>();
+            foreach (var address in addresses)
             {
-                description = "Avenida Paulista, 1000",
-                point = new Point {x = -46.6520066, y = -23.5650127}
-            };
+                var routeStop = new RouteStop();
+                routeStop.description = address.street;
 
-            var destinationRoute = new RouteStop
-            {
-                description = "Av Pres Juscelino Kubitschek, 1000",
-                point = new Point {x = -46.679055, y = -23.589735}
-            };
+                var point = new Point();
+                point.x = address.X;
+                point.y = address.Y;
+                routeStop.point = point;
 
-            RouteStop[] routes = {originRoute, destinationRoute};
-
+                routes.Add(routeStop);
+            }
+            
             var routeOptions = new RouteOptions
             {
                 language = "portugues",
@@ -42,7 +51,7 @@ namespace WebAPI_ML.Controllers
 
             using (var routeSoapClient = new RouteSoapClient())
             {
-                RouteInfo getRouteResponse = routeSoapClient.getRoute(routes,
+                RouteInfo getRouteResponse = routeSoapClient.getRoute(routes.ToArray(),
                     routeOptions,
                     token);
 
