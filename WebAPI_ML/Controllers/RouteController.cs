@@ -24,18 +24,18 @@ namespace WebAPI_ML.Controllers
 
     public enum RouteType
     {
-        RotaPadrãoMaisrápida = 0,
-        RotaPadrãoMaiscurta = 1,
+        RotaPadraoMaisRapida = 0,
+        RotaPadraoMaiscurta = 1,
         RotaAPéPedestre = 2,
-        Rotaevitandobalsas = 6,
-        RotaevitandoestradasdeTerra = 7,
-        RotaevitandobalsaseEstradasDeTerra = 8,
-        RotaevitandoestradasemCondiçõesPrecárias = 9,
-        Rotaevitandopedágios = 10,
+        RotaEvitandobalsas = 6,
+        RotaEvitandoestradasdeTerra = 7,
+        RotaEvitandobalsaseEstradasDeTerra = 8,
+        RotaEvitandoestradasemCondiçõesPrecárias = 9,
+        RotaEvitandopedágios = 10,
         RotaComtransportePúblico = 21,
-        RotaEvitandoTrânsito = 23,
-        RotapadrãomaisrápidaComOTempoConsiderandoTrânsito = 24,
-        RotapadrãomaiscurtaComOTempoConsiderandoTrânsito = 25,
+        RotaEvitandoTransito = 23,
+        RotaPadraomaisrápidaComOTempoConsiderandoTrânsito = 24,
+        RotaPadraomaiscurtaComOTempoConsiderandoTrânsito = 25,
         RotapriorizandocicloviasCiclofaixasCiclorrotas = 26,
     }
 

@@ -1,11 +1,24 @@
 ﻿<div class="row">
-    <div class="form-group col-xs-3">
-        <label for="gasPrice">Gas price:</label>
+    <div class="form-group col-xs-2">
+        <label for="gasPrice">Fuel Price ($$):</label>
         <input class="form-control" id="gasPrice" placeholder="1.92" value="1.92">
     </div>
     <div class="form-group col-xs-3">
-        <label for="carFuelConsumption">Car Fuel Consumption per km:</label>
+        <label for="carFuelConsumption">Avg. Consumption (km/l):</label>
         <input class="form-control" id="carFuelConsumption" placeholder="10" value="10">
+    </div>
+
+    <div class="form-group col-xs-3">
+        <label for="routeType">Route Type:</label>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                Select Route Type <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a id="fastestRoute" href="#">Fastest Route</a></li>
+                <li><a id="avoidTrafic" href="#">Avoid Trafic</a></li>
+            </ul>
+        </div>
     </div>
 
     <div class="form-group col-xs-1">
