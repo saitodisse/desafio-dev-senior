@@ -13,28 +13,35 @@ MapApp.module('Views', function (Views, App, Backbone, Marionette, $) {
         template: JST['./WebAppSample/Scripts/src/templates/inputVehicleInfoItemView.hbs'],
 
         ui: {
-            street: '#street',
-            houseNumber: '#houseNumber',
-            state: '#state',
-            cityName: '#cityName'
+            gasPrice: '#gasPrice',
+            carFuelConsumption: '#carFuelConsumption',
+            selectedDropDown: '#selectedDropDown'
         },
 
         events: {
             'click #btnCalcRoute': 'btnCalcRouteClicked',
+            'click #fastestRoute': 'selectDropDown_fastestRoute',
+            'click #avoidTrafic': 'selectDropDown_avoidTrafic',
         },
 
         initialize: function (options) {
             this.addressesCollection = options.addressesCollection;
         },
 
+        selectDropDown_fastestRoute: function(e) {
+            e.preventDefault();
+            this.model.set('routeType', 0);
+            this.ui.selectedDropDown.text($(e.target).text());
+        },
+
+        selectDropDown_avoidTrafic: function (e) {
+            e.preventDefault();
+            this.model.set('routeType', 23);
+            this.ui.selectedDropDown.text($(e.target).text());
+        },
+
         btnCalcRouteClicked: function () {
             console.log('selected address collection', this.addressesCollection);
-            //var searchObj = {
-            //    street: this.ui.street.val(),
-            //    houseNumber: this.ui.houseNumber.val(),
-            //    state: this.ui.state.val(),
-            //    cityName: this.ui.cityName.val()
-            //}
 
             var addressesDto = [];
             this.addressesCollection.models.forEach(function(model) {
@@ -45,7 +52,14 @@ MapApp.module('Views', function (Views, App, Backbone, Marionette, $) {
                 });
             });
 
-            App.vent.trigger('calc:route', addressesDto);
+            var routeQueryConfig = {
+                AddressItens: addressesDto,
+                RouteType: this.model.get('routeType'),
+                AverageConsumption: this.ui.carFuelConsumption.val(),
+                FuelPrice: this.ui.gasPrice.val()
+            };
+
+            App.vent.trigger('calc:route', routeQueryConfig);
         },
     });
 });

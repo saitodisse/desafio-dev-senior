@@ -38,11 +38,50 @@ namespace WebAPI_ML.Tests.Controllers
             routeQueryConfig.AverageSpeed = 50;
             routeQueryConfig.TotalFeeCat = TotalFeeCat.AutomóvelCaminhonetaEFurgãodoisEixosSimples;
 
+
             var routeInfo = controller.Post(routeQueryConfig);
+
+            Console.WriteLine("routeAvoidFee.routeTotals.totalCost = " + routeInfo.routeTotals.totalCost);
+            Console.WriteLine("routeAvoidFee.routeTotals.totalFuelUsed = " + routeInfo.routeTotals.totalFuelUsed);
+            Console.WriteLine("routeAvoidFee.routeTotals.totalTime = " + routeInfo.routeTotals.totalTime);
 
             Assert.IsTrue(routeInfo.routeTotals.totalDistance > 0);
         }
 
+        [TestMethod]
+        public void CalcRouteSimple()
+        {
+            var controller = new RouteController();
+
+            var addressItems = new List<AddressItem>();
+            addressItems.Add(new AddressItem
+            {
+                street = "Pça. Augusta Vitória, 1000",
+                X = -46.5737289,
+                Y = -23.4844051
+            });
+
+            addressItems.Add(new AddressItem
+            {
+                street = "Vp. Secundina Augusta Santos, 1000",
+                X = -46.579239,
+                Y = -23.4790611
+            });
+
+            var routeQueryConfig = new RouteQueryConfig();
+            routeQueryConfig.AddressItens = addressItems;
+            routeQueryConfig.RouteType = RouteType.RotaEvitandoTransito;
+            routeQueryConfig.AverageConsumption = 12;
+            routeQueryConfig.FuelPrice = 1.92;
+
+            var routeInfo = controller.Post(routeQueryConfig);
+
+            Console.WriteLine("routeAvoidFee.routeTotals.totalCost = " + routeInfo.routeTotals.totalCost);
+            Console.WriteLine("routeAvoidFee.routeTotals.totalFuelUsed = " + routeInfo.routeTotals.totalFuelUsed);
+            Console.WriteLine("routeAvoidFee.routeTotals.totalTime = " + routeInfo.routeTotals.totalTime);
+
+            Assert.IsTrue(routeInfo.routeTotals.totalDistance > 0);
+        }
         [TestMethod]
         public void RouteWithoutFeeHasTheSameLength()
         {
